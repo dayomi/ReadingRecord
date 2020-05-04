@@ -1,24 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useCallback } from "react";
+import Signin from "./components/SignIn/Signin";
+import Signup from "./components/SignIn/Signup";
+import Main from "./components/Main/Main";
 
 function App() {
+  const [isLogin, setIsLogin] = useState({
+    flag: false,
+    signUpFlag: false,
+  });
+
+  const onLogin = useCallback((state) => {
+    setIsLogin({
+      flag: state.flag,
+      signUpFlag: state.signUpFlag,
+    });
+  });
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {isLogin.flag ? <Main /> : <Signin onLogin={onLogin} />}
+      {!isLogin.signUpFlag ? <div>회원가입</div> : <Signup />}
     </div>
   );
 }
