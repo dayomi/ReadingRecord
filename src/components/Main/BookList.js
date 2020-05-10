@@ -4,6 +4,7 @@ import Book from "./Book";
 import Input from "@material-ui/core/Input";
 import InputBook from "./InputBook";
 import RecordList from "../Record/RecordList";
+import "./Book.css";
 
 const BookList = () => {
   const [books, setBooks] = useState([
@@ -13,7 +14,7 @@ const BookList = () => {
       Author: "알베르 카뮈",
       Create_date: "2020/04/24",
       image:
-        "https://lh3.googleusercontent.com/proxy/4dHCr6t5SDG0mM0_WIkvKzS11aMI9oWM9p8iWVi22zDDsinHEwq46Y1gucJNTyD_dE8mULGVH9g5OIUM3IQBo5vWFxkSkoKFH6CmIUFfMRU",
+        "http://image.yes24.com/goods/4827619/800x0",
     },
     {
       bid: 2,
@@ -29,7 +30,7 @@ const BookList = () => {
       Author: "이겨레 올림",
       Create_date: "2020/04/24",
       image:
-        "https://w.namu.la/s/9071d0575b6d14c0d6fc5832e26fe8ef0a298a1abb1d442cc3c865534ec5e949e8a2d195fe425ebb15f2f1f5b270e6b86979bd1e3fcb4e9d9432bdfbf4fb02a6b79290aa2276e7171d50486c6e1ec3637bb9271378b431876c879a70c8ee6ca8",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Gull_portrait_ca_usa.jpg/300px-Gull_portrait_ca_usa.jpg",
     },
   ]);
   const [flag, setFlag] = useState(true);
@@ -81,7 +82,7 @@ const BookList = () => {
         <ul>
           {bookList}
           <br></br>
-          <Input type="button" onClick={onFlagFalse} value="+책추가"></Input>
+          <Input type="button" class="inputBook" onClick={onFlagFalse} value="+ Add New"></Input>
         </ul>
       ) : (
         <InputBook

@@ -1,5 +1,6 @@
 import React, { useState, useCallback, useRef } from "react";
 import Button from "@material-ui/core/Button";
+import "./RecordList.css";
 
 const RecordList = (props) => {
   const [records, setRecords] = useState([
